@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spottigus.DataContext\Spottigus.DataContext.csproj" />
+    <ProjectReference Include="..\Spottigus.ErrorHandling\Spottigus.ErrorHandling.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>
