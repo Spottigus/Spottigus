@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD638FD9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.Tests.Helpers", "tests\Spottigus.Tests.Helpers\Spottigus.Tests.Helpers.csproj", "{830329C0-A2BE-48CC-9CEE-915B4451BEE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.DataContext.Tests", "Tests\Spottigus.DataContext.Tests\Spottigus.DataContext.Tests.csproj", "{23E33972-ABD8-4A42-B08C-96DF08E5DE85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.DataContext.Tests", "tests\Spottigus.DataContext.Tests\Spottigus.DataContext.Tests.csproj", "{23E33972-ABD8-4A42-B08C-96DF08E5DE85}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.ErrorHandling", "source\Spottigus.ErrorHandling\Spottigus.ErrorHandling.csproj", "{4979840C-1C66-48E0-949C-74691D042DD4}"
 EndProject
