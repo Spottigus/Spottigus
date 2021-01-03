@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Xunit;
+//using Xunit;
 
 namespace Spottigus.Tests.Helpers.Example
 {
