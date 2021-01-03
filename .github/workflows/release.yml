@@ -37,3 +37,4 @@ jobs:
           dotnet nuget push ./publish/Spottigus.DataContext.*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY --skip-duplicate
           dotnet nuget push ./publish/Spottigus.DataRepository.*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY --skip-duplicate
           dotnet nuget push ./publish/Spottigus.ErrorHandling.*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY --skip-duplicate
+          dotnet nuget push ./publish/Spottigus.Tests.Helpers.*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY --skip-duplicate
