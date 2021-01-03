@@ -2,7 +2,8 @@ name: Release
 
 env:
   NUGET_API_KEY: ${{secrets.NUGET_API_KEY}}
-
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: TRUE
+  
 on:
   push:
     tags:
