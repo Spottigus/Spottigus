@@ -1,7 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <IsPackable>True</IsPackable>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <Description>A simple test helper that allows use of sqlite in memory based on MS example.</Description>
+    <PackageProjectUrl>https://github.com/Spottigus/Spottigus</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Spottigus/Spottigus</RepositoryUrl>
+    <Copyright>Phillip Henault</Copyright>
+    <Authors>Phillip Henault</Authors>
+    <NoWarn>CA2007</NoWarn>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
