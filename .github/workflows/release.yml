@@ -30,8 +30,6 @@ jobs:
       - name: Package and publish to Nuget
         run: |
           VERSION=`git describe --tags`
-          echo "Publishing Version: ${VERSION}"
-          echo "::set-env name=VERSION::${VERSION}"
           npm install
           dotnet build 
           dotnet pack /p:PackageVersion=$VERSION -c Release -f net5 -o publish
