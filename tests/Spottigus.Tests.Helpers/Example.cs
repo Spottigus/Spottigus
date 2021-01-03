@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-//using Xunit; Need to add package references to run.
+//using Xunit; Need to add package references to run this example.
 
 namespace Spottigus.Tests.Helpers.Example
 {
