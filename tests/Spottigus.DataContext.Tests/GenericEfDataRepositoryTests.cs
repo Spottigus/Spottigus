@@ -110,6 +110,141 @@ namespace Spottigus.DataContext.Tests
             result.IsSuccessful.Should().BeTrue();
         }
 
+        [Fact]
+        public async Task Update_GoodData_ReturnsSuccessful()
+        {
+            GenericDataContext<Model> mockDbContext = CreateMockDbContext();
+            GenericEfDataRepository<Model> sut = new GenericEfDataRepository<Model>(mockDbContext);
+
+            Model selectedModel = new Model();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Model modelToAdd = new Model() {Name = i.ToString()};
+
+                if (i == 5)
+                {
+                    selectedModel = modelToAdd;
+                }
+
+                mockDbContext.DataSet.Add(modelToAdd);
+            }
+
+            await mockDbContext.SaveChangesAsync();
+            mockDbContext.ChangeTracker.Clear();
+
+            selectedModel.Name = "Test";
+            var result = await sut.Update(selectedModel);
+            result.IsSuccessful.Should().BeTrue();
+        }
+
+        [Fact]
+        public async Task Update_BadData_ReturnsSuccessful()
+        {
+            GenericDataContext<Model> mockDbContext = CreateMockDbContext();
+            GenericEfDataRepository<Model> sut = new GenericEfDataRepository<Model>(mockDbContext);
+
+            Model selectedModel = new Model();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Model modelToAdd = new Model() {Name = i.ToString()};
+
+                if (i == 5)
+                {
+                    selectedModel = modelToAdd;
+                }
+
+                mockDbContext.DataSet.Add(modelToAdd);
+            }
+
+            await mockDbContext.SaveChangesAsync();
+            mockDbContext.ChangeTracker.Clear();
+
+            var result = await sut.Update(new Model(){ Id = Guid.NewGuid ()});
+            result.IsSuccessful.Should().BeFalse();
+        }
+
+        [Fact]
+        public async Task Update_GoodData_ActuallyUpdates()
+        {
+            GenericDataContext<Model> mockDbContext = CreateMockDbContext();
+            GenericEfDataRepository<Model> sut = new GenericEfDataRepository<Model>(mockDbContext);
+
+            Model selectedModel = new Model();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Model modelToAdd = new Model() {Name = i.ToString()};
+
+                if (i == 5)
+                {
+                    selectedModel = modelToAdd;
+                }
+
+                mockDbContext.DataSet.Add(modelToAdd);
+            }
+
+            await mockDbContext.SaveChangesAsync();
+            mockDbContext.ChangeTracker.Clear();
+
+            selectedModel.Name = "Test";
+            var result = await sut.Update(selectedModel);
+            mockDbContext.ChangeTracker.Clear();
+            
+            var updatedModel = await mockDbContext.DataSet.FirstOrDefaultAsync(p => p.Id == selectedModel.Id);
+            updatedModel.Name.Should().Be("Test");
+        }
+
+        [Fact]
+        public async Task GetById_BadData_ReturnsErrorResult()
+        {
+            GenericDataContext<Model> mockDbContext = CreateMockDbContext();
+            GenericEfDataRepository<Model> sut = new GenericEfDataRepository<Model>(mockDbContext);
+
+            Model selectedModel = new Model();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Model modelToAdd = new Model() {Name = i.ToString()};
+
+                if (i == 5)
+                {
+                    selectedModel = modelToAdd;
+                }
+
+                mockDbContext.DataSet.Add(modelToAdd);
+            }
+
+            await mockDbContext.SaveChangesAsync();
+            mockDbContext.ChangeTracker.Clear();
+
+            var result = await sut.GetById(Guid.NewGuid());
+            result.IsSuccessful.Should().BeFalse();
+        }
+
+        [Fact]
+        public async Task Delete_BadData_ReturnsErrorResult()
+        {
+            GenericDataContext<Model> mockDbContext = CreateMockDbContext();
+            GenericEfDataRepository<Model> sut = new GenericEfDataRepository<Model>(mockDbContext);
+
+            Model selectedModel = new Model();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Model modelToAdd = new Model() {Name = i.ToString()};
+
+                mockDbContext.DataSet.Add(modelToAdd);
+            }
+
+            await mockDbContext.SaveChangesAsync();
+            mockDbContext.ChangeTracker.Clear();
+
+            var result = await sut.Delete(new Model() { Id = Guid.NewGuid() });
+            result.IsSuccessful.Should().BeFalse();
+        }
+
 
         [Fact]
         public async Task GetAll_GoodData_ReturnsSuccessResult()

@@ -11,6 +11,6 @@ namespace Spottigus.DataRepository.Contracts
         Task<IResult<List<T>>> GetAll();
         Task<IResult> Update(T itemToUpdate);
         Task<IResult> Create(T itemToCreate);
-        Task<IResult> Delete(Guid idToDelete);
+        Task<IResult> Delete(T itemToDelete);
     }
 }
