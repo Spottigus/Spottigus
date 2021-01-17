@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.ErrorHandling", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.Blazor.Modularity", "source\Spottigus.Blazor.Modularity\Spottigus.Blazor.Modularity.csproj", "{82427F14-4B77-48A4-A0B5-A8C135AFC871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spottigus.Blazor.Modularity.Tests", "tests\Spottigus.Blazor.Modularity.Tests\Spottigus.Blazor.Modularity.Tests.csproj", "{25ECBDAE-128D-43D4-A038-25C794220E44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +120,18 @@ Global
 		{82427F14-4B77-48A4-A0B5-A8C135AFC871}.Release|x64.Build.0 = Release|Any CPU
 		{82427F14-4B77-48A4-A0B5-A8C135AFC871}.Release|x86.ActiveCfg = Release|Any CPU
 		{82427F14-4B77-48A4-A0B5-A8C135AFC871}.Release|x86.Build.0 = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|x64.Build.0 = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Debug|x86.Build.0 = Debug|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|x64.ActiveCfg = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|x64.Build.0 = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|x86.ActiveCfg = Release|Any CPU
+		{25ECBDAE-128D-43D4-A038-25C794220E44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DE66BED3-1641-4E63-B992-9FD1C5C626D3} = {A0EC8F7F-937B-4072-BFAD-D91051BC27E7}
@@ -127,5 +141,6 @@ Global
 		{23E33972-ABD8-4A42-B08C-96DF08E5DE85} = {DD638FD9-C5F0-4FCE-9A5F-935398B48365}
 		{4979840C-1C66-48E0-949C-74691D042DD4} = {A0EC8F7F-937B-4072-BFAD-D91051BC27E7}
 		{82427F14-4B77-48A4-A0B5-A8C135AFC871} = {A0EC8F7F-937B-4072-BFAD-D91051BC27E7}
+		{25ECBDAE-128D-43D4-A038-25C794220E44} = {DD638FD9-C5F0-4FCE-9A5F-935398B48365}
 	EndGlobalSection
 EndGlobal

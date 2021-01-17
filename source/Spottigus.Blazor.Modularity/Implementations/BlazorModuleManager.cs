@@ -11,6 +11,17 @@ namespace Spottigus.Blazor.Modularity.Implementations
     {
         private List<Assembly> _assemblies = new();
         private List<IBlazorModule> _modules = new();
+
+        public BlazorModuleManager(IBlazorModule[] modules)
+        {
+            if (modules is null)
+            {
+                throw new ArgumentNullException(nameof(modules));
+            }
+
+            _modules.AddRange(modules);
+        }
+
         public void RegisterModule(IBlazorModule moduleToRegister)
         {
             if (moduleToRegister is null)
@@ -18,7 +29,11 @@ namespace Spottigus.Blazor.Modularity.Implementations
                 throw new ArgumentNullException(nameof(moduleToRegister));
             }
 
-            _modules.Add(moduleToRegister);
+            if (_modules.Where(s => s.GetAssembly().FullName == moduleToRegister.GetAssembly().FullName).Count() == 0)
+            {
+                _assemblies.Add(moduleToRegister.GetAssembly());
+                _modules.Add(moduleToRegister);   
+            }
         }
         public Assembly[] GetAssemblies()
         {
